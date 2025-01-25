@@ -1,0 +1,6 @@
+debug
+*.test
+*.out
+testdata/config.yaml
+testdata/exchange-rates.json
+TODO.md
