@@ -16,23 +16,23 @@ func TestExchangeRates(t *testing.T) {
 	x := New()
 	x.ConfigFile = "../../testdata/config.yaml"
 
-	rate, err := x.GetRate("USD", false)
+	rate, err := x.GetCachedRate("USD", false)
 	assert.PassIf(t, err == nil, "%v", err)
 	assert.Equal(t, 1.00, rate)
 
-	rate, err = x.GetRate("NZD", false)
+	rate, err = x.GetCachedRate("NZD", false)
 	assert.PassIf(t, err == nil, "%v", err)
 	assert.PassIf(t, rate > 0, "invalid NZD rate: %f", rate)
 
-	rate, err = x.GetRate("AUD", false)
+	rate, err = x.GetCachedRate("AUD", false)
 	assert.PassIf(t, err == nil, "%v", err)
 	assert.PassIf(t, rate > 0, "invalid AUD rate: %f", rate)
 
-	_, err = x.GetRate("", false)
+	_, err = x.GetCachedRate("", false)
 	assert.PassIf(t, err != nil, "should have return error for blank currency")
 	assert.Equal(t, "no currency specified", err.Error())
 
-	_, err = x.GetRate("FOOBAR", false)
+	_, err = x.GetCachedRate("FOOBAR", false)
 	assert.PassIf(t, err != nil, "should have return error for FOOBAR currency")
 	assert.Equal(t, "unknown currency: FOOBAR", err.Error())
 }

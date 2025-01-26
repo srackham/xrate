@@ -78,11 +78,11 @@ func (x *ExchangeRates) getRates() (Rates, error) {
 	return rates, nil
 }
 
-// GetRate returns the amount of `currency` that $1 USD would buy at today's rates.
+// GetCachedRate returns the amount of `currency` that $1 USD would buy at today's rates.
 // `symbol` is a currency symbol.
 // If `force` is `true` then then today's rates are unconditionally fetched and the cache updated.
 // TODO tests
-func (x *ExchangeRates) GetRate(currency string, force bool) (float64, error) {
+func (x *ExchangeRates) GetCachedRate(currency string, force bool) (float64, error) {
 	if currency == "" {
 		return 0.0, fmt.Errorf("no currency specified")
 	}

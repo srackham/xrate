@@ -28,7 +28,7 @@ CURRENCY is the fiat currency's ticker symbol e.g. NZD, AUD, EUR
 		os.Exit(1)
 	}
 	defer x.Save()
-	rate, err := x.GetRate(currency, false)
+	rate, err := x.GetCachedRate(currency, false)
 	if err != nil {
 		fmt.Fprint(os.Stderr, err.Error())
 		os.Exit(1)
