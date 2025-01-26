@@ -79,27 +79,27 @@ func (x *ExchangeRates) getRates() (Rates, error) {
 }
 
 // GetRate returns the amount of `currency` that $1 USD would buy at today's rates.
-// `currency` is a currency symbol.
+// `symbol` is a currency symbol.
 // If `force` is `true` then then today's rates are unconditionally fetched and the cache updated.
 // TODO tests
-func (x *ExchangeRates) GetRate(symbol string) (float64, error) {
-	if symbol == "" {
+func (x *ExchangeRates) GetRate(currency string) (float64, error) {
+	if currency == "" {
 		return 0.0, fmt.Errorf("no currency specified")
 	}
-	if symbol == "USD" {
+	if currency == "USD" {
 		return 1.00, nil
 	}
 	var rate float64
 	var ok bool
 	today := helpers.TodaysDate()
-	if rate, ok = (*x.CacheData)[today][strings.ToUpper(symbol)]; !ok {
+	if rate, ok = (*x.CacheData)[today][strings.ToUpper(currency)]; !ok {
 		rates, err := x.getRates()
 		if err != nil {
 			return 0.0, err
 		}
 		x.CacheData = &RatesCacheData{today: rates}
-		if rate, ok = (*x.CacheData)[today][strings.ToUpper(symbol)]; !ok {
-			return 0.0, fmt.Errorf("unknown currency: %s", symbol)
+		if rate, ok = (*x.CacheData)[today][strings.ToUpper(currency)]; !ok {
+			return 0.0, fmt.Errorf("unknown currency: %s", currency)
 		}
 	}
 	return rate, nil

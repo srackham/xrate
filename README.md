@@ -1,10 +1,10 @@
 # Fiat Currency Exchange Rates
 
-A simple CLI command to fetch the amount of a fiat currency that would be exchanged for one US dollar.
+A simple CLI command to print the amount of `CURRENCY` that $1 USD would buy at today's rates.
 
-    Usage: xrate SYMBOL
+    Usage: xrate CURRENCY
 
-`SYMBOL` is the currency's ticker symbol e.g. `NZD`, `AUD`, `EUR`:
+`CURRENCY` is the currency's ticker symbol e.g. `NZD`, `AUD`, `EUR`:
 
 ```
 $ xrate NZD
