@@ -82,7 +82,7 @@ func (x *ExchangeRates) getRates() (Rates, error) {
 // `symbol` is a currency symbol.
 // If `force` is `true` then then today's rates are unconditionally fetched and the cache updated.
 // TODO tests
-func (x *ExchangeRates) GetRate(currency string) (float64, error) {
+func (x *ExchangeRates) GetRate(currency string, force bool) (float64, error) {
 	if currency == "" {
 		return 0.0, fmt.Errorf("no currency specified")
 	}
@@ -92,7 +92,7 @@ func (x *ExchangeRates) GetRate(currency string) (float64, error) {
 	var rate float64
 	var ok bool
 	today := helpers.TodaysDate()
-	if rate, ok = (*x.CacheData)[today][strings.ToUpper(currency)]; !ok {
+	if rate, ok = (*x.CacheData)[today][strings.ToUpper(currency)]; !ok || force {
 		rates, err := x.getRates()
 		if err != nil {
 			return 0.0, err
