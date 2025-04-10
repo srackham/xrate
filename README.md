@@ -34,3 +34,8 @@ xrates-appid: <your open exchange rates App ID goes here>
 ```
 
 The exchange rates are cached in `$HOME/.cache/xrate/exchange-rates.json`.
+
+# Todo
+- Move `cache` package to go-utils.
+- Move `helpers` package to go-utils.
+- Add Makefile to test and build.

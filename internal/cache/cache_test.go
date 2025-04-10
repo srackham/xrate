@@ -7,8 +7,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/srackham/xrate/internal/assert"
-	"github.com/srackham/xrate/internal/fsx"
+	"github.com/srackham/go-utils/assert"
+	"github.com/srackham/go-utils/fsx"
 )
 
 // Cache data types.

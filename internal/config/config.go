@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/srackham/xrate/internal/fsx"
+	"github.com/srackham/go-utils/fsx"
 	"gopkg.in/yaml.v3"
 )
 

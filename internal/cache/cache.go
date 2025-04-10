@@ -4,7 +4,7 @@ import (
 	"crypto/sha256"
 	"encoding/json"
 
-	"github.com/srackham/xrate/internal/fsx"
+	"github.com/srackham/go-utils/fsx"
 )
 
 // Cache is designed to be embedded, it implements file-based data persistance with load and save functions.

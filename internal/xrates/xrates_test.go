@@ -3,7 +3,7 @@ package xrates
 import (
 	"testing"
 
-	"github.com/srackham/xrate/internal/assert"
+	"github.com/srackham/go-utils/assert"
 	"github.com/srackham/xrate/internal/helpers"
 )
 
