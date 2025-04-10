@@ -7,7 +7,7 @@ import (
 	"path"
 	"strings"
 
-	"github.com/srackham/xrate/internal/cache"
+	"github.com/srackham/go-utils/cache"
 	"github.com/srackham/xrate/internal/config"
 	"github.com/srackham/xrate/internal/helpers"
 )
