@@ -17,10 +17,10 @@ type RatesCache map[string]Rates // Key = date string "YYYY-MM-DD".
 
 func TestRates(t *testing.T) {
 	data := make(RatesCache)
-	r := New(&data)
 	tmpdir, err := os.MkdirTemp("", "xrate")
+	cacheFile := filepath.Join(tmpdir, "valuations.json")
+	r := New(&data, cacheFile)
 	assert.PassIf(t, err == nil, "%v", err)
-	r.CacheFile = filepath.Join(tmpdir, "valuations.json")
 
 	err = r.Save()
 	assert.PassIf(t, err == nil, "%v", err)

@@ -15,9 +15,10 @@ type Cache[T any] struct {
 	sha256    [32]byte // Cache file checksum.
 }
 
-func New[T any](data *T) *Cache[T] {
+func New[T any](data *T, cacheFile string) *Cache[T] {
 	return &Cache[T]{
 		CacheData: data,
+		CacheFile: cacheFile,
 	}
 }
 

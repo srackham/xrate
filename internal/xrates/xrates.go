@@ -27,12 +27,12 @@ type ExchangeRates struct {
 
 func New() ExchangeRates {
 	data := make(RatesCacheData)
+	cacheFile := path.Join(helpers.GetXDGCacheDir(), "xrate", "exchange-rates.json")
 	result := ExchangeRates{
 		path.Join(helpers.GetXDGConfigDir(), "xrate", "config.yaml"),
-		*cache.New(&data),
+		*cache.New(&data, cacheFile),
 		http.Get,
 	}
-	result.CacheFile = path.Join(helpers.GetXDGCacheDir(), "xrate", "exchange-rates.json")
 	return result
 }
 
