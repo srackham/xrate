@@ -1,7 +1,7 @@
 github.com/google/go-cmp v0.6.0 h1:ofyhxvXcZhMsU5ulbFiLKl/XBFqE1GSq7atu8tAmTRI=
 github.com/google/go-cmp v0.6.0/go.mod h1:17dUlkBOakJ0+DkrSSNjCkIjxS6bF9zb3elmeNGIjoY=
-github.com/srackham/go-utils v0.0.3 h1:OMA8CoIBa1k+jexFtpHj3ebK4GMD2+3DXjG4z75OiSc=
-github.com/srackham/go-utils v0.0.3/go.mod h1:hVEJCzcfPOJKkWkN14snU8LyDNySSG2iir5nxQHiAE0=
+github.com/srackham/go-utils v0.0.4 h1:uezJ83MTqWw5ijFegiWlamKGYvaEdRgyKCx7YorYAUo=
+github.com/srackham/go-utils v0.0.4/go.mod h1:hVEJCzcfPOJKkWkN14snU8LyDNySSG2iir5nxQHiAE0=
 golang.org/x/exp v0.0.0-20250408133849-7e4ce0ab07d0 h1:R84qjqJb5nVJMxqWYb3np9L5ZsaDtB+a39EqjV0JSUM=
 golang.org/x/exp v0.0.0-20250408133849-7e4ce0ab07d0/go.mod h1:S9Xr4PYopiDyqSyp5NjCrhFrqg6A5zA2E/iPHPhqnS8=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405 h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=
