@@ -8,8 +8,8 @@ import (
 	"strings"
 
 	"github.com/srackham/go-utils/cache"
+	"github.com/srackham/go-utils/helpers"
 	"github.com/srackham/xrate/internal/config"
-	"github.com/srackham/xrate/internal/helpers"
 )
 
 // Cache data types.
@@ -27,9 +27,9 @@ type ExchangeRates struct {
 
 func New() ExchangeRates {
 	data := make(RatesCacheData)
-	cacheFile := path.Join(helpers.GetXDGCacheDir(), "xrate", "exchange-rates.json")
+	cacheFile := path.Join(helpers.GetCacheDir(), "xrate", "exchange-rates.json")
 	result := ExchangeRates{
-		path.Join(helpers.GetXDGConfigDir(), "xrate", "config.yaml"),
+		path.Join(helpers.GetConfigDir(), "xrate", "config.yaml"),
 		*cache.New(&data, cacheFile),
 		http.Get,
 	}
@@ -39,7 +39,7 @@ func New() ExchangeRates {
 // getRates fetches a list of currency exchange rates against the USD
 // TODO getRates should be an IXRatesAPI interface cf. prices.IPriceAPI.
 func (x *ExchangeRates) getRates() (Rates, error) {
-	if helpers.GithubActions() {
+	if helpers.IsRunningOnGithub() {
 		// getRates() requires HTTP access and should never execute from Github Actions.
 		mockRates := Rates{"usd": 1.0, "nzd": 1.5, "aud": 1.6}
 		return mockRates, nil

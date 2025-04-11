@@ -4,11 +4,11 @@ import (
 	"testing"
 
 	"github.com/srackham/go-utils/assert"
-	"github.com/srackham/xrate/internal/helpers"
+	"github.com/srackham/go-utils/helpers"
 )
 
 func TestExchangeRates(t *testing.T) {
-	if helpers.GithubActions() {
+	if helpers.IsRunningOnGithub() {
 		t.Skip("skip on Github Actions because this test requires HTTP access")
 	}
 
